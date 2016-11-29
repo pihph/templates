@@ -1,0 +1,310 @@
+% === GO TO THE USER CUSTOMIZATION SECTION TO MAKE CHANGES
+
+\documentclass[article, a4paper, 12pt]{memoir}
+
+% Please use XeLaTeX to compile
+
+\usepackage{xltxtra}
+\defaultfontfeatures{Ligatures=TeX}
+\usepackage{hyphenat}
+
+\newcommand\setlogofont[1]{\newfontfamily\logofont{#1}}
+\newcommand\setlicensefont[1]{\newfontfamily\licensefont{#1}}
+\usepackage{microtype}
+\usepackage{rotating}
+\usepackage{hyperxmp}
+\usepackage[colorlinks=true, unicode=true, breaklinks=true, linkcolor=black, urlcolor=blue, citecolor=black]{hyperref}
+
+\counterwithout{section}{chapter}
+\setsecnumdepth{subsubsection}
+\setcounter{tocdepth}{3}
+
+\usepackage[export]{adjustbox}
+\usepackage{graphicx}
+\usepackage[type={CC}, modifier={by}, version=4.0]{doclicense}
+
+\newcommand\affiliation[1]{{\normalfont\normalsize\itshape#1}}
+
+\pagestyle{simple}
+\makeevenfoot{simple}{}{}{}
+\makeoddfoot{simple}{}{}{}
+\raggedbottom
+
+\newcommand\authorheader[1]{\makeevenhead{simple}{\footnotesize\itshape#1}{}{\footnotesize\thepage}}
+\newcommand\titleheader[1]{\makeoddhead{simple}{\footnotesize\thepage}{}{\footnotesize\itshape#1}}
+
+\newcommand\thisdoi{10.1010/1010101010101010101010}
+\newcommand\thisdoilink{https://doi.org/\thisdoi}
+
+\renewcommand{\maketitlehooka}{%
+  \vspace*{-60pt}
+  \noindent\hspace*{-25pt}\begin{minipage}[t]{2.5cm}
+    \vspace*{-16pt}
+    \includegraphics[valign=t, width=2.5cm]{pihph-logo.png}
+  \end{minipage}
+  \begin{minipage}[t]{.75\linewidth}
+    \centering
+    \logofont\Large Papers in Historical Phonology\\[5pt]
+
+    \footnotesize
+    
+    http://journals.ed.ac.uk/pihph
+
+    ISSN 2399-6714
+    
+    \footnotesize\vspace*{5pt}
+
+    Volume 1, \thepage--\thelastpage
+
+    DOI: \href{\thisdoilink}{\thisdoi}
+  \end{minipage}
+  \begin{minipage}[t]{2.1cm}
+    \centering
+    \vspace*{-14pt}
+    \adjustbox{valign=t}{\doclicenseImage[imagewidth=2.1cm]}\\
+      \licensefont\tiny Licensed under~a \doclicenseLongNameRef{} License
+  \end{minipage} 
+}
+
+\pretitle{\vspace*{24pt}\begin{center}\large\bfseries}
+\preauthor{\begin{center}\large\scshape\begin{tabular}[t]{c}}
+\postauthor{\end{tabular}\end{center}\vspace*{12pt}}                                         
+\predate{\relax}
+\postdate{\relax}
+\date{}
+
+\captionnamefont{\footnotesize\bfseries}
+\captiontitlefont{\footnotesize}
+
+\renewcommand\abstractnamefont{\normalfont\footnotesize\bfseries}                                        
+\renewcommand\abstracttextfont{\normalfont\footnotesize}
+\setlength\absleftindent{1cm}
+\setlength\absrightindent{1cm}
+\setlength{\abstitleskip}{-17pt}
+\setbeforesecskip{-18pt}
+\setaftersecskip{6pt}
+\setsecheadstyle{\normalfont\bfseries}
+\setbeforesubsecskip{-18pt}
+\setaftersubsecskip{6pt}
+\setsubsecheadstyle{\normalfont\bfseries}
+\setbeforesubsubsecskip{-18pt}
+\setaftersubsubsecskip{6pt}
+\setsubsubsecheadstyle{\normalfont\bfseries}
+\renewenvironment{quote}{\list{}{\leftmargin=0.7cm\rightmargin=0.7cm}\item[]\footnotesize}{\endlist}
+
+\setlrmarginsandblock{4cm}{4cm}{*}
+\setulmarginsandblock{4.5cm}{4.5cm}{*}
+\checkandfixthelayout
+
+\setlength{\footmarkwidth}{0em}
+\setlength{\footmarksep}{0em}
+\footmarkstyle{\textsuperscript{#1}\hspace{.3em}}
+\setfootins{24pt}{\bigskipamount}
+\renewcommand*{\footnoterule}{%
+   \kern-3pt%
+   \hrule width 0.4\columnwidth
+   \kern 2.6pt
+ \vspace{12pt}}
+
+\usepackage[usenames]{xcolor}
+\definecolor{pihphgreen}{RGB}{118, 146, 60}
+\usepackage[most]{tcolorbox}
+
+\newtcolorbox{tcdoublebox}[1][]{%
+  enhanced jigsaw,
+  sharp corners,
+  colback=white,
+  text width=.95\textwidth,
+  before={\vspace*{18pt}\noindent},
+  left skip=-5mm,
+  borderline={1pt}{-2pt}{black},
+  #1
+}
+
+\newcommand\commentsinvited{
+\begin{tcdoublebox}
+
+\section*{\textcolor{pihphgreen}{Comments invited}}
+
+\textit{PiHPh} relies on post-publication review of the papers that it publishes. If you have any comments on this piece, please add them to its comments site. You are encouraged to consult this site after reading the paper, as there may be comments from other readers there, and replies from the author. This paper's site is here:
+
+\noindent \url{\thisdoilink}
+
+\end{tcdoublebox}
+}
+
+\widowpenalty=10000
+\clubpenalty=10000
+
+% === START OF USER CUSTOMIZATION
+
+
+\title{This is a title and this is too:\\A subtitle goes on another line}
+\author{Author's name\\\affiliation{Author's affiliation} \and Second author's name (if there is one)\\\affiliation{Second author's affiliation}}
+
+\authorheader{Author's name}
+\titleheader{Title (shortened if necessary)}
+
+\setmainfont{Cambria} % If you do not have access to Cambria, you can use the metric-equivalent Caladea: https://fontlibrary.org/en/font/caladea
+\setlicensefont{Calibri} % If you do not have access to Calibri, you can use the metric-equivalent Carlito: https://fontlibrary.org/en/font/carlito
+\setlogofont{Lekton} % Available at https://www.fontsquirrel.com/fonts/lekton
+
+% If any of these fonts are not available on your system, feel free to
+% change them here, but of course the final layout will then differ
+
+\usepackage{polyglossia}                   % or use babel if desired
+\setmainlanguage[variant=british]{english} % or use babel if desired
+\usepackage[autostyle, english=british]{csquotes} % remove the english=british option for double quotes
+\usepackage{expex} % for examples, feel free to use anything else
+
+% Some recommended packages
+
+\usepackage{booktabs} % for nice tables
+
+% === BEGIN BIBLIOGRAPHY SETUP ===
+
+% BibLaTeX setup, recommended
+
+\usepackage[backend=biber,
+       bibstyle=biblatex-sp-unified, % biblatex-sp-unified.bbx can be obtained at https://github.com/semprag/biblatex-sp-unified
+       citestyle=sp-authoryear-comp, % sp-authoryear-comp.cbx can be obtained at https://github.com/semprag/biblatex-sp-unified
+       mincrossrefs=50,
+       maxcitenames=3,
+       maxbibnames=50,
+       useprefix=true,
+       doi=false]{biblatex}
+\addbibresource{bibliography.bib} % remember to include the .bib extension
+% remember to run biber rather than bibtex if using this option
+
+\AtEveryCitekey{\ifciteseen{}{\defcounter{maxnames}{99}}}
+
+% BibTeX setup, deprecated
+% \usepackage{natbib}
+% \bibpunct[:]{(}{)}{;}{a}{}{,}
+% \setlength\bibsep{0pt}
+
+
+
+% === END BIBLIOGRAPHY SETUP ===
+
+
+\begin{document}
+\setcounter{page}{1}
+\maketitle
+
+
+\begin{abstract}
+\noindent This is the template for \LaTeX{} users; we also have a Word template available, so feel free to use that if you're not into \LaTeX. All submissions to PiHPh should aim to follow the formatting set out in this template precisely, as there is no separate typesetting phase. Most styles in this template have been set up to insert the necessary white space where needed. You should use the styles that are provided in this template consistently to ensure that your submission is quickly processed. Do not change the margins or header/footer properties, including the material on this first page (such as volume, page numbers and DOI), which we will update when your submission is ready. Make sure to look at the user customization part of the preamble to this \texttt{.tex} source to change titles, running headers, bibliography etc. All the packages used here should be available in a recent version of \TeX Live. All articles should include an abstract in this position, of no more than 200 words. 
+\end{abstract}
+
+\section{Heading level 1}
+\label{sec:heading-level-1}
+
+The first paragraph under all headings will not be indented.\footnote{This is a footnote example}  The font for everything is Cambria --- use Xe\LaTeX{} to compile the document to achieve this. Cambria should hopefully have all the transcription symbols that you will need, but if you have any problems using symbols, get in touch (pihph@\hspace{0pt}mlist.ed.ac.uk). Use normal phonological conventions when transcribing: [skweːɹ] brackets for surface/narrow transcriptions and /slantɪd/ brackets for underlying/broad transcriptions. It’s fine to use either IPA conventions (e.g., /t͡ʃ, ɾ, j, y/) or Americanist conventions (e.g., /č, ᴅ, y, ü/), but if there is any possibility of ambiguity or if you need to use a non-conventional symbol, you should explain what it stands for. 
+
+All paragraphs other than the first in a section will be indented by 0.7cm. Make sure that you use the shaftless arrow \enquote{>} for diachronic correspondences. The shafted arrow \enquote{→} (or $\rightarrow$) should be used for synchronic derivations. Use \enquote{smart quotation marks}, not {\addfontfeatures{Mapping=}'straight quotation marks'} (we recommend the \texttt{csquotes} package, as in this template). Either British or American English spelling is fine, as long as you are consistent. It is crucial that you spellcheck and carefully proofread your piece before submission. Use a hyphen \enquote{-} only to join together two parts of a compound (as in \enquote{affrico-palatalisation}). For number ranges (as in \enquote{1999–2002}), use an en dash \enquote{--}. For all other purposes, use an em dash \enquote{---}.
+
+\subsection{Heading level 2}
+\label{sec:heading-level-2}
+
+Quotations of under 25 words should be included in the running text \enquote{as a wise person once said} (with an associated full reference, including page numbers). All references should follow the normal Author (date, page number) system.  Longer quotations should be set out as follows, which represents the words of Bloggs (1937, 23).
+
+\begin{quote}
+This is the format for a quotation of 25 words or more, with indentation of 0.7 cm throughout the quotation on both sides and a font size of 10 points (this is set up in the template) and a reference in the text above it, unless there is a good reason to give the reference elsewhere.
+\end{quote}
+
+All examples and anything that is not a table or figure should be given a number for reference, as normal. You can set out your examples, diagrams and other similar items in any way that you think sensible (within the general constraints of this template). We recommend the \texttt{expex} package for example, but you are welcome to use any others. Put the example number in brackets, but if you use subexamples the numbering is up to you. The numbers for examples should not be indented.
+
+\ex\begin{tabular}[t]{lll}
+     /ɛɡzampl/ & [ɛɡzámpl̩] & `example'
+   \end{tabular}
+\xe
+
+\ex\labels\begin{tabular}[t]{>{\tl}llll} % or use \pex
+& /tu e/ & [tʰʉː eː] & `two a' \\
+& /tu bi/ & [tʰʉː biː] & `two b'
+\end{tabular}
+\xe 
+
+If you need to include translations for examples, use single quotation marks. Do not use bold or underlining anywhere in an article (apart from where required by the template in headings and the like). Use italics for linguistic examples in the running text, for the titles of publications and for any kind of emphasis. If you encounter any problems with setting out your examples and similar things, contact us for advice (pihph@\hspace{0pt}mlist.is.ed.ac.uk).
+
+Captions for figures and tables should be set out below the figure or table. We recommend, but do not insist, that you avoid vertical rules in your tables (we recommend the \texttt{booktabs} package). Otherwise, the setting of figures and tables is also up to you. Everything should be placed in your article where you would like it to appear in the published PDF. Do not place anything at the end of an article unless it clearly belongs in an appendix (that is, it consists of material that a casual reader will not want to consult, but may be of interest to specialists). You will be able to host data sets, statistical data, scripts, and the like separately (within reason) if you would like to make them available in connection with an article. Contact us if you would like to discuss this (pihph@\hspace{0pt}mlist.is.ed.ac.uk).
+
+\begin{figure}[h]
+  \centering
+  \rule{.1pt}{2cm} \rule{2cm}{.1pt} \rule{.1pt}{2cm}
+  \caption{Caption}
+  \label{fig:example}
+\end{figure}
+
+\section{Another section}
+\label{sec:another-section}
+
+\subsection{And another subsection}
+\label{sec:another-subsection}
+
+As previously, the first line in this paragraph, under a section heading, is not indented. 
+
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+
+\subsubsection{And another level for headings}
+\label{sec:anoth-level-head}
+
+Do not use more than three levels of structure. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+The following sections show the kinds of things that you might include at the end of your paper. Use the \texttt{\textbackslash section*} command to produce unnumbered sections.
+
+\commentsinvited % Please do not change this
+
+\section*{Acknowledgements}
+\label{sec:acknowledgements}
+
+
+Include any acknowledgements in an unnumbered section here, rather than in a footnote early in the paper.
+
+\section*{Associated material}
+\label{sec:associated-material}
+
+If you would like to post any data sets, statistical data, scripts or similar material that links to your article, you can include a description of it all at the end of the paper.
+
+\section*{Author's contact details}
+\label{sec:auth-cont-deta}
+
+List the postal and e-mail addresses for all authors using the following format:\\
+
+\noindent \textit{Author 1}\\
+University of Somewhere\\
+Street address\\
+Town/city, postcode\\
+Country
+
+\vspace*{5pt}
+\noindent \textit{e-mail@uni.edu}\\
+
+\noindent Repeat for all authors. If your contact details change after an article has been published, you can contact the PiHPh team at pihph@mlist.is.ed.ac.uk to update this information in an article.
+
+
+\section*{References}
+\label{sec:references}
+
+Please use the Unified Style Sheet for Linguistics Journals. \LaTeX{} support is available through the \texttt{sp-biblatex-unified} style (if using Bib\LaTeX, which we recommend) or the \texttt{unified.bst} style (if using Bib\TeX). See the code of the template for suggestions on how to set this up.
+
+
+
+
+% === BEGIN BIBLIOGRAPHY SETUP ===
+
+% BibLaTeX setup, recommended
+\printbibliography[title=References]
+
+% BibTeX setup, deprecated
+% \bibliographystyle{unified} % unified.bst can be obtained at http://cexlj.org/downloads/unified.bst
+% \renewcommand\bibsection{\section*{References}}
+% \bibliography{bibliography} 
+% === END BIBLIOGRAPHY SETUP ===
+
+
+\end{document}
