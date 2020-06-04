@@ -33,8 +33,8 @@
 \newcommand\authorheader[1]{\makeevenhead{simple}{\footnotesize\itshape#1}{}{\footnotesize\thepage}}
 \newcommand\titleheader[1]{\makeoddhead{simple}{\footnotesize\thepage}{}{\footnotesize\itshape#1}}
 
-\newcommand\thisdoi{10.1010/1010101010101010101010}
-\newcommand\thisdoilink{https://doi.org/\thisdoi}
+\newcommand\thisdoi{10.2218/pihph.201x.x.xxxx}
+\newcommand\thisdoilink{http://dx.doi.org/\thisdoi}
 
 \renewcommand{\maketitlehooka}{%
   \vspace*{-60pt}
@@ -56,7 +56,7 @@
 
     Volume 1, \thepage--\thelastpage
 
-    DOI: \href{\thisdoilink}{\thisdoi}
+    DOI: \thisdoi
   \end{minipage}
   \begin{minipage}[t]{2.1cm}
     \centering
@@ -128,7 +128,7 @@
 
 \textit{PiHPh} relies on post-publication review of the papers that it publishes. If you have any comments on this piece, please add them to its comments site. You are encouraged to consult this site after reading the paper, as there may be comments from other readers there, and replies from the author. This paper's site is here:
 
-\noindent \url{\thisdoilink}
+\vspace*{1ex}\noindent \url{\thisdoilink}
 
 \end{tcdoublebox}
 }
@@ -166,8 +166,7 @@
 % BibLaTeX setup, recommended
 
 \usepackage[backend=biber,
-       bibstyle=biblatex-sp-unified, % biblatex-sp-unified.bbx can be obtained at https://github.com/semprag/biblatex-sp-unified
-       citestyle=sp-authoryear-comp, % sp-authoryear-comp.cbx can be obtained at https://github.com/semprag/biblatex-sp-unified
+       style=langsci-unified, % available on CTAN
        mincrossrefs=50,
        maxcitenames=3,
        maxbibnames=50,
@@ -191,6 +190,7 @@
 \begin{document}
 \setcounter{page}{1}
 \maketitle
+\thispagestyle{empty}
 
 
 \begin{abstract}
@@ -290,7 +290,7 @@ Country
 \section*{References}
 \label{sec:references}
 
-Please use the Unified Style Sheet for Linguistics Journals. \LaTeX{} support is available through the \texttt{sp-biblatex-unified} style (if using Bib\LaTeX, which we recommend) or the \texttt{unified.bst} style (if using Bib\TeX). See the code of the template for suggestions on how to set this up.
+Please use the Unified Style Sheet for Linguistics Journals. \LaTeX{} support is available through the \texttt{langsci-unified} style (if using Bib\LaTeX, which we recommend) or the \texttt{unified.bst} style (if using Bib\TeX). See the code of the template for suggestions on how to set this up.
 
 
 
